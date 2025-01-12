@@ -3,15 +3,13 @@ import { Square } from "../entities/square";
 import { test_squares } from "../__mocks__/squares";
 import { Section } from "../shared/section.ui";
 import { Table } from "../shared/table.ui";
-import { getRandomNumber } from "../shared/random.lib";
+import { request } from "../shared/request.lib";
 
 export function Squares() {
 	const [squares, setSquares] = useState<Square[]>([]);
 
 	useEffect(() => {
-		setTimeout(() => {
-			setSquares(test_squares);
-		}, getRandomNumber(200, 1500));
+		request(() => setSquares(test_squares));
 	}, []);
 
 	return (

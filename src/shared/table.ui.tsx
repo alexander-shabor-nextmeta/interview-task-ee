@@ -26,7 +26,7 @@ export function Table<T extends Record<keyof T, string | number>>({
 			<tbody>
 				{loading && (
 					<tr>
-						<td colSpan={columns.length} align="center">
+						<td colSpan={columns.length}>
 							<div className="loader"></div>
 						</td>
 					</tr>
