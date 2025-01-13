@@ -1,7 +1,8 @@
-type TEventFn = (params: object) => void;
+type TEventParams = Record<string, number>;
+type TEventFn = (params: TEventParams) => void;
 type TSubscribers = Record<string, TEventFn[]>;
 
-export class EventEmitter {
+class EventEmitter {
 	public subscribers: TSubscribers = {};
 
 	public subscribe(name: string, eventFn: TEventFn) {
@@ -15,7 +16,7 @@ export class EventEmitter {
 		};
 	}
 
-	public emit(name: string, params: object) {
+	public emit(name: string, params: TEventParams) {
 		this.subscribers[name]?.forEach((event) => event(params));
 	}
 }
