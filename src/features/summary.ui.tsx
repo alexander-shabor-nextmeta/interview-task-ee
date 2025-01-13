@@ -7,7 +7,7 @@ export function Summary() {
 	return (
 		<Section title="Summary">
 			<p>
-				Sum of Area:&nbsp;<strong>{sum}</strong>
+				Sum of Area: <strong>{sum}</strong>
 			</p>
 		</Section>
 	);
